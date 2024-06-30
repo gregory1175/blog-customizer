@@ -29,7 +29,7 @@
 	cursor: pointer;
 
 	&:focus {
-	outline: 3px solid #000000;
+		outline: 3px solid #000000;
 	}
 }
 
@@ -48,7 +48,7 @@
 
 .selectWrapper:not([data-is-active='true'])
 	.placeholder:not([data-status='invalid']):hover {
-	outline: 1px solid #FFC802;
+	outline: 1px solid #ffc802;
 }
 
 .select {
@@ -77,8 +77,8 @@
 	cursor: pointer;
 
 	&:focus {
-	background-color: #D7D7D7;
-	outline: none;
+		background-color: #d7d7d7;
+		outline: none;
 	}
 }
 
@@ -87,7 +87,7 @@
 }
 
 .option:hover {
-	background: var(--grey, #EEEEEE);
+	background: var(--grey, #eeeeee);
 }
 
 @mixin option-color-before {

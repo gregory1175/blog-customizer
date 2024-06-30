@@ -3,7 +3,7 @@ import { ArrowButton } from 'components/arrow-button';
 import { Button } from 'components/button';
 import { Text } from '../text';
 import { Separator } from '../separator';
-import { RadioGroup } from '../radio-group';  	
+import { RadioGroup } from '../radio-group';
 import { useClose } from './hooks/UseClose';
 import { FormEvent, useCallback, useRef, useState } from 'react';
 

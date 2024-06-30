@@ -11,13 +11,12 @@
 	@include typography(18, 400, 'Open Sans');
 
 	button[type='reset']:hover & {
-		color: #fff;
+		color: #ffffff;
 	}
 
 	button[type='reset']:active & {
-		color: #000000; 
+		color: #000000;
 	}
-
 }
 
 .open-sans {

@@ -13,8 +13,8 @@
 	transition: transform 0.5s ease;
 
 	&:hover {
-		background-color: #FFC802;
-		}
+		background-color: #ffc802;
+	}
 
 	&:active {
 		background-color: #787878;
@@ -31,7 +31,6 @@
 	height: 48px;
 	transform: rotate(180deg);
 	transition: transform 0.5s ease;
-
 }
 
 .arrow_open {

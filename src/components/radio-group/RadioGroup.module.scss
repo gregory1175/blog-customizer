@@ -33,17 +33,21 @@
 }
 
 /* Убираем бордер у последнего в radiogroup, чтобы не было двойного бордера */
+
 .item:last-child .label {
 	border: none;
 }
 
-/* Изменяем селектор для ховера, чтобы исключить активные кнопки */
-.label:hover:not(.item[data-checked='true'] .label) {
-	background: var(--yellow, #FFEDAB);
-}
+/* Перемещаем селектор для активного состояния перед селектором для ховера */
 
 .item[data-checked='true'] .label {
 	background: var(--gold, #ffc802);
+}
+
+/* Изменяем селектор для ховера, чтобы исключить активные кнопки */
+
+.label:hover:not(.item[data-checked='true'] .label) {
+	background: var(--yellow, #ffedab);
 }
 
 .container {
