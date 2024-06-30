@@ -3,8 +3,7 @@ import { ArrowButton } from 'components/arrow-button';
 import { Button } from 'components/button';
 import { Text } from '../text';
 import { Separator } from '../separator';
-import { RadioGroup } from '../radio-group';
-import { useOutsideClickClose } from '../select/hooks/useOutsideClickClose';
+import { RadioGroup } from '../radio-group';  	
 import { useClose } from './hooks/UseClose';
 import { FormEvent, useCallback, useRef, useState } from 'react';
 
@@ -50,13 +49,6 @@ export const ArticleParamsForm = ({
 	const formRef = useRef<HTMLFormElement>(null);
 
 	// Хуки для закрытия формы при клике вне её
-	useOutsideClickClose({
-		isOpen,
-		rootRef,
-		onClose: () => setIsOpen(false),
-		onChange: setIsOpen,
-	});
-
 	useClose({
 		isOpen: isOpen,
 		onClose: () => setIsOpen(false),
@@ -104,7 +96,7 @@ export const ArticleParamsForm = ({
 		<>
 			<ArrowButton onClick={() => setIsOpen(!isOpen)} isMenuOpen={isOpen} />
 			<aside
-				className={clsx(styles.container, isOpen && styles.container_open)}
+				className={clsx(styles.container, { [styles.container_open]: isOpen })}
 				ref={rootRef}>
 				<form
 					className={styles.form}

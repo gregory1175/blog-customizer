@@ -9,6 +9,15 @@
 
 .text {
 	@include typography(18, 400, 'Open Sans');
+
+	button[type='reset']:hover & {
+		color: #fff;
+	}
+
+	button[type='reset']:active & {
+		color: #000000; 
+	}
+
 }
 
 .open-sans {

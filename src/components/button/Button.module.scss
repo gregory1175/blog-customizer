@@ -7,13 +7,32 @@
 	height: 50px;
 	text-align: center;
 	border: 1px solid #000000;
+	background: var(--gold, #ffc802);
 	cursor: pointer;
+
+	&:active {
+		background: var(--gold, #ffc802);
+
+		&:hover {
+			background: var(--gold, #ffc802);
+		}
+	}
+
+	&:hover {
+		background: var(--yellow, #FFEDAB);
+	}
+
+	&[type='reset'] {
+		background: var(--gold, #ffffff);
+
+		&:hover {
+			background: #000;
+		}
+
+		&:active {
+			background: #fff;
+		}
+	}
 }
 
-.button:active {
-	background: var(--gold, #ffc802);
-}
 
-.button:hover {
-	background: var(--gold, #ffc802);
-}
