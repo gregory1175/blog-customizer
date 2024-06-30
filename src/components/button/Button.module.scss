@@ -6,14 +6,31 @@
 	width: 210px;
 	height: 50px;
 	text-align: center;
+	background: var(--gold, #ffc802);
 	border: 1px solid #000000;
 	cursor: pointer;
-}
 
-.button:active {
-	background: var(--gold, #ffc802);
-}
+	&:hover {
+		background: var(--yellow, #ffedab);
+	}
 
-.button:hover {
-	background: var(--gold, #ffc802);
+	&:active {
+		background: var(--gold, #ffc802);
+
+		&:hover {
+			background: var(--gold, #ffc802);
+		}
+	}
+
+	&[type='reset'] {
+		background: var(--gold, #ffffff);
+
+		&:hover {
+			background: #000000;
+		}
+
+		&:active {
+			background: #ffffff;
+		}
+	}
 }

@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import React, { useRef, useCallback, memo } from 'react';
 import { OptionType } from 'src/constants/articleProps';
 import { Text } from 'components/text';
 import { useEnterSubmit } from './hooks/useEnterSubmit';
@@ -14,22 +14,24 @@ type OptionProps = {
 	option: OptionType;
 };
 
-export const Option = (props: OptionProps) => {
+const OptionComponent = (props: OptionProps) => {
 	const { value, title, selected, groupName, onChange, option } = props;
 
 	const optionRef = useRef<HTMLDivElement>(null);
 
-	const handleChange = () => onChange?.(option);
+	// Вынесен handleChange чтобы не создавать новую функцию при рендере
+	const handleChange = useCallback(() => {
+		onChange?.(option);
+	}, [onChange, option]);
 
 	useEnterSubmit({ onChange, option });
 
 	const inputId = `${groupName}_radio_item_with_value__${value}`;
-	const isChecked = value === selected.title;
+	const isChecked = value === selected.value;
 
 	return (
 		<div
 			className={styles.item}
-			key={value}
 			data-checked={isChecked}
 			data-testid={inputId}
 			tabIndex={0}
@@ -42,6 +44,7 @@ export const Option = (props: OptionProps) => {
 				value={value}
 				onChange={handleChange}
 				tabIndex={-1}
+				checked={isChecked} // Добавлен атрибут checked для управления состоянием компонента
 			/>
 			<label className={styles.label} htmlFor={inputId}>
 				<Text size={18} uppercase>
@@ -51,3 +54,5 @@ export const Option = (props: OptionProps) => {
 		</div>
 	);
 };
+
+export const Option = memo(OptionComponent);
