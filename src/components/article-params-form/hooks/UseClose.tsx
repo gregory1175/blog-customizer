@@ -7,17 +7,23 @@ type TUseClose = {
 };
 
 export function useClose({ isOpen, onClose, rootRef }: TUseClose) {
-	const handleClickOutside = useCallback((event: MouseEvent) => {
-		if (rootRef.current && !rootRef.current.contains(event.target as Node)) {
-			onClose();
-		}
-	}, [onClose, rootRef]);
+	const handleClickOutside = useCallback(
+		(event: MouseEvent) => {
+			if (rootRef.current && !rootRef.current.contains(event.target as Node)) {
+				onClose();
+			}
+		},
+		[onClose, rootRef]
+	);
 
-	const handleEscape = useCallback((e: KeyboardEvent) => {
-		if (e.key === 'Escape') {
-			onClose();
-		}
-	}, [onClose]);
+	const handleEscape = useCallback(
+		(e: KeyboardEvent) => {
+			if (e.key === 'Escape') {
+				onClose();
+			}
+		},
+		[onClose]
+	);
 
 	useEffect(() => {
 		if (!isOpen) return;

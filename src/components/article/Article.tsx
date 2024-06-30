@@ -1,10 +1,9 @@
 import clsx from 'clsx';
-import React from 'react';
+import { memo } from 'react';
 
 // Сообщаем вебпаку, что этот файл использует это изображение.
 import plane from 'src/images/plane.png';
 import { Text } from 'components/text';
-
 import styles from './Article.module.scss';
 
 const ArticleComponent = () => {
@@ -50,5 +49,5 @@ const ArticleComponent = () => {
 	);
 };
 
-// оптимизируем прорисовку компонента 
-export const Article = React.memo(ArticleComponent);
+// оптимизируем прорисовку компонента
+export const Article = memo(ArticleComponent);

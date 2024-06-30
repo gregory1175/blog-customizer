@@ -10,7 +10,7 @@ const root = createRoot(domNode);
 
 // Рендерим приложение в строгом режиме (StrictMode).
 root.render(
-  <StrictMode>
-    <App />
-  </StrictMode>
+	<StrictMode>
+		<App />
+	</StrictMode>
 );
